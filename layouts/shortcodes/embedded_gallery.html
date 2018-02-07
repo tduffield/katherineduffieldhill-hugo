@@ -1,0 +1,18 @@
+{{- $data := index .Site.Data.embedded_galleries (.Get "name") }}
+<h4>{{ $data.title }}</h4>
+<section id="embedded-photo-gallery">
+{{- range $data.images }}
+  <figure class="photo-gallery">
+    {{- $default_url := print "/images/galleries/" $data.name "/" .file }}
+    {{- $.Scratch.Set "url" $default_url }}
+    {{- with .url }}{{ $.Scratch.Set "url" . }}{{ end }}
+    <a href="{{ $.Scratch.Get "url" }}"{{ if ne .lightbox false }} data-lightbox="{{ $data.name }}" {{ with .title }}data-title="{{ . }}"{{ end }}{{ end }}>
+      <img src="/images/galleries/{{ $data.name }}/{{ .file }}" />
+    </a>
+    <figcaption>
+      {{- with .title }}<span class="fig-title">{{ . }}</span>{{ end }}
+      {{- with .caption }}{{ . }}{{ end }}
+    </figcaption>
+  </figure>
+{{- end }}
+</section>

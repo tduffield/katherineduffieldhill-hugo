@@ -1,3 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "http://www.katherineduffieldhill.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Katherine Hill MSHP"
+sectionPagesMenu = "sections"
+
+# [[menu.sections]]
+#   identifier = "resume"
+#   name = "Resumé"
+#   weight = 10
+#   url = "TODO_Dropbox_URL"

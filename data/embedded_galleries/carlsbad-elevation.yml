@@ -1,0 +1,10 @@
+---
+name: carlsbad-elevation
+title: Elevation
+images:
+  - file: CarlsbadElevation_Sketch.jpg
+    title: Sketch
+  - file: CarlsbadElevation_CADb.jpg
+    title: CAD
+    lightbox: false
+    url: /files/CarlsbadElevation_CAD.pdf

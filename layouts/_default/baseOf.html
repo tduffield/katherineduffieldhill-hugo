@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{ if not .IsHome }}{{ .Title }} • {{ end }}{{ .Site.Title }}</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css">
+  <link rel="stylesheet" href='{{ "css/style.css" | absURL }}'>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>{{ .Site.Title }}</h1>
+      <nav>
+        <ul>
+          <li>
+            <a {{ if .IsHome }}class="active" {{ end }}href="/">Home</a>
+          </li>
+          {{ $currentPage := . }} {{ range sort .Site.Menus.sections "Weight" "asc" }}
+          <li>
+            <a {{if or ($currentPage.IsMenuCurrent "sections" .) ($currentPage.HasMenuCurrent "sections" .)}}class="active" {{ end }}href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+    </header>
+    <section id="main">
+      {{ block "main" . -}}{{- end }}
+    </section>
+    <footer>
+      <section id="copyright">
+        Copyright &copy; 2017 Katherine Duffield Hill. All Rights Reserved.
+      </section>
+      <section id="social">
+        <ul>
+          <li>
+            <a href="http://instagram.com/kaylihl" target="_blank">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/KaylihlPhoto" target="_blank">
+              <i class="fa fa-twitter-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/people/kaylihl/" target="_blank">
+              <i class="fa fa-flickr"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox-plus-jquery.min.js"></script>
+  <script src='{{ "js/main.js" | absURL }}'></script>
+</body>
+
+</html>

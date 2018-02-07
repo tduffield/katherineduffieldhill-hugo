@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section id="photo-galleries">
+  {{ range where .Paginator.Pages "Section" "ne" "" }}
+  <figure class="photo-gallery">
+    <a href="{{ .URL }}"><img class="photo-gallery-preview" data-photo-gallery="{{ .File.BaseFileName }}" data-photo-gallery-tags="{{ .Params.tags }}" /></a>
+    <figcaption>{{ .Title }}</figcaption>
+  </figure>
+  {{ end }}
+</section>
+{{ end }}

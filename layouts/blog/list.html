@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section id="blog-posts">
+  {{ range where .Paginator.Pages "Section" "ne" "" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    <h6>{{ .Date.Format "January 2, 2006" }}</h3>
+    <p>{{ .Content | markdownify }}</p>
+  </article>
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,13 @@
+---
+name: caretakers-cottage
+title: Photography
+images:
+  - file: Zilker_HistoricAerial.jpg
+    title: Historic Aerial
+    caption: Courtesy of the Austin History Center
+  - file: Zilker_EastFacade1.jpg
+    title: Facade - East
+    caption:
+  - file: Zilker_WestFacade1.jpg
+    title: Facade - West
+    caption:

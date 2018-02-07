@@ -1,0 +1,4 @@
+{{ define "main" }}
+<h1 class="photo-gallery-title">{{ .Title }}</h1>
+<section id="full-photo-gallery" data-photo-gallery="{{ .File.BaseFileName }}" data-photo-gallery-tags="{{ .Params.tags }}"></section>
+{{ end }}
