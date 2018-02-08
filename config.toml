@@ -2,6 +2,7 @@ baseURL = "https://www.katherineduffieldhill.com"
 languageCode = "en-us"
 title = "Katherine Hill MSHP"
 sectionPagesMenu = "sections"
+theme = "blank"
 
 # [[menu.sections]]
 #   identifier = "resume"
