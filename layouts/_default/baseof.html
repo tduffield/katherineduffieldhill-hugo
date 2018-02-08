@@ -24,6 +24,9 @@
             <a {{if or ($currentPage.IsMenuCurrent "menu" .) ($currentPage.HasMenuCurrent "menu" .)}}class="active" {{ end }}href="{{ .URL | absURL }}">{{ .Name }}</a>
           </li>
           {{ end }}
+          <li>
+            <a href="/files/KatherineHill_Resume.pdf" target="_blank">Resumé</a>
+          </li>
         </ul>
       </nav>
     </header>

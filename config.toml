@@ -3,9 +3,3 @@ title = "Katherine Hill MSHP"
 sectionPagesMenu = "menu"
 themesDir = "themes"
 theme = "blank"
-
-# [[menu.sections]]
-#   identifier = "resume"
-#   name = "Resumé"
-#   weight = 10
-#   url = "TODO_Dropbox_URL"
