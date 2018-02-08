@@ -19,16 +19,17 @@
           <li>
             <a {{ if .IsHome }}class="active" {{ end }}href="/">Home</a>
           </li>
-          {{ $currentPage := . }} {{ range sort .Site.Menus.sections "Weight" "asc" }}
+          {{ $currentPage := . }} {{ range sort .Site.Menus.menu "Weight" "asc" }}
           <li>
-            <a {{if or ($currentPage.IsMenuCurrent "sections" .) ($currentPage.HasMenuCurrent "sections" .)}}class="active" {{ end }}href="{{ .URL | absURL }}">{{ .Name }}</a>
+            <a {{if or ($currentPage.IsMenuCurrent "menu" .) ($currentPage.HasMenuCurrent "menu" .)}}class="active" {{ end }}href="{{ .URL | absURL }}">{{ .Name }}</a>
           </li>
           {{ end }}
         </ul>
       </nav>
     </header>
     <section id="main">
-      {{ block "main" . -}}{{- end }}
+      {{ block "main" . }}
+      {{ end }}
     </section>
     <footer>
       <section id="copyright">
