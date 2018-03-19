@@ -1,7 +1,7 @@
 {{ $image := .Page.Resources.GetMatch (printf "%s" (.Get "file")) }}
 {{ $caption := .Get "caption" }}
 {{ $command := (printf "%s" (.Get "options" | default "x300")) }}
-{{ $thumbnail := $image.Resize (printf "%s q100" $command) }}
+{{ $thumbnail := $image.Resize (printf "%s q75" $command) }}
 {{ $href := .Get "link" | default $image.RelPermalink }}
 {{- with .Parent -}}
   <a href='{{ $image.RelPermalink }}' data-ngthumb="{{$thumbnail.RelPermalink}}" data-ngdesc="{{ $caption }}">{{ $caption }}</a>
