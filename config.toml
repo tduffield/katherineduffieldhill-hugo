@@ -1,5 +1,3 @@
 baseURL = "https://www.katherineduffieldhill.com"
 title = "Katherine Hill MSHP"
 sectionPagesMenu = "menu"
-themesDir = "themes"
-theme = "blank"
