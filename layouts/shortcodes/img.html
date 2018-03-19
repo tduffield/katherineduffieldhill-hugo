@@ -1,6 +1,6 @@
 {{ $image := .Page.Resources.GetMatch (printf "%s" (.Get "file")) }}
 {{ $caption := .Get "caption" }}
-{{ $command := (printf "%s" (.Get "options" | default "x800")) }}
+{{ $command := (printf "%s" (.Get "options" | default "x300")) }}
 {{ $thumbnail := $image.Resize (printf "%s q100" $command) }}
 {{ $href := .Get "link" | default $image.RelPermalink }}
 {{- with .Parent -}}
