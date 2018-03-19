@@ -1,0 +1,6 @@
+
+<div style='margin: 10px; display: block;{{ with .Get "width" }} width: {{ .}}px;{{ end }}{{ with .Get "float" }} float: {{ . }};{{ end }}'>
+  <div id='{{ .Get "name" }}' data-nanogallery2='{{ .Get "options" }}'>
+    {{ .Inner }}
+  </div>
+</div>

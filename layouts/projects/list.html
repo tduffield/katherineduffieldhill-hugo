@@ -1,29 +1,23 @@
 {{ define "main" }}
-<section id="projects">
-  {{ range where .Paginator.Pages.ByWeight "Section" "ne" "" }} {{ $.Scratch.Add "i" 1 }} {{ $i := $.Scratch.Get "i" }}
-  <article id="{{ .File.BaseFileName }}">
-    {{ if modBool $i 2 }}
-    <section>
-      <h1>{{ .Title }}</h1>
-      <p>{{ .Summary | markdownify }}</p>
-      <a class="button" style="float: left;" href="{{ .URL | absURL }}">Read More</a>
-    </section>
-    <figure class="project-preview-img">
-      <img src="/images/{{ .File.TranslationBaseName }}.jpg" class="margin-left" />
-      <figcaption class="margin-left">{{ .Params.caption }}</figcaption>
-    </figure>
-    {{ else }}
-    <figure class="project-preview-img">
-      <img src="/images/{{ .File.TranslationBaseName }}.jpg" class="margin-right" />
-      <figcaption class="margin-right">{{ .Params.caption }}</figcaption>
-    </figure>
-    <section>
-      <h1>{{ .Title }}</h1>
-      <p>{{ .Summary | markdownify }}</p>
-      <a class="button" style="float: right;" href="{{ .URL | absURL }}">Read More</a>
-    </section>
-    {{ end }}
-  </article>
+<section id="featured-projects">
+  {{ range where (where .Data.Pages "Section" "projects") ".Params.featured" "==" true }}
+  <figure>
+    {{ $original := .Resources.GetMatch (printf "%s*" (.Params.cover_image)) }}
+    {{ $image := $original.Fill "375x375"}}
+    <a href="{{ .RelPermalink }}"><img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" /></a>
+    <figcaption>
+        <a href="{{ .RelPermalink }}"><h4>{{ .Title }}</h4></a>
+      <p class="lead_in">{{ .Params.lead_in | markdownify }}<br /><i>{{ .Params.location }}</i></p>
+    </figcaption>
+  </figure>
   {{ end }}
+</section>
+<!-- <h2>Other Projects</h2> -->
+<section id="projects">
+  <ul>
+  {{ range where (where .Data.Pages "Section" "projects") ".Params.featured" "==" false }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+  </ul>
 </section>
 {{ end }}
