@@ -3,7 +3,7 @@ title: "About"
 weight: 40
 ---
 
-{{< figure src="/images/about.jpg" class="float-left" >}}
+{{< figure src="headshot.jpg" class="float-left" >}}
 
 **Katherine Hill is a second year MSHP student at the University of Texas School of Architecture.**
 

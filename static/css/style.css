@@ -84,25 +84,9 @@ footer #social ul {
 
 /*  */
 
-main a.button {
-  background-color: white;
-  color: black;
-  border: 2px solid #f44336;
-  padding: 10px 20px;
+#main p a:link, #main p a:visited {
   color: #f44336;
 }
-
-main a.button:hover {
-  background-color: #f44336;
-  color: white;
-}
-
-main .center-button {
-  text-align: center;
-  padding: 20px;
-}
-
-/*  */
 
 main figure {
   margin: 0;
@@ -116,6 +100,43 @@ main figure.float-left img {
 main figure.float-right img {
   margin-left: 15px;
   float: right;
+}
+
+/* Projects List  */
+
+main section#featured-projects {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  justify-content: center;
+}
+
+main section#featured-projects figure {
+  width: 350px;
+  padding: 10px;
+  margin: 10px;
+}
+
+main section#featured-projects figure h4 {
+  margin: 3px 0px;
+}
+
+main section#featured-projects figure p.lead_in {
+  margin: 3px 0px;
+  font-size: 0.8em;
+}
+
+/* Project Pages */
+
+main div.float-left {
+  float: left;
+  margin-right: 15px;
+}
+
+main div.float-right {
+  float: right;
+  margin-left: 15px;
 }
 
 /* Photography */
@@ -133,6 +154,10 @@ main #photo-galleries figure {
   margin: 10px;
   text-align: center;
   width: 375px;
+}
+
+main #photo-galleries figure h4 {
+  margin: 3px 0px;
 }
 
 main #photo-galleries figure img {
@@ -155,80 +180,6 @@ main #full-photo-gallery figure img {
   width: 375px;
   height: 250px;
   object-fit: cover;
-}
-
-/* Embedded Galleries */
-
-main #embedded-photo-gallery {
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-main #embedded-photo-gallery figure img {
-  margin: 5px 20px 5px 0px;
-  width: 375px;
-}
-
-main #embedded-photo-gallery figure figcaption {
-  margin-left: 0px;
-  font-size: 0.8em;
-}
-
-main #embedded-photo-gallery figure figcaption .fig-title {
-  color: #f44336;
-  font-weight: 600;
-  display: block;
-}
-
-/* Projects */
-
-main section#projects {
-  width: 100%;
-}
-
-main section#projects article {
-  display: flex;
-  margin-bottom: 50px;
-}
-
-main section#projects article:last-child {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-main section#projects article section h1 {
-  margin-top: 10px;
-}
-
-main section#projects article figure {
-  display: flex-cell;
-}
-
-main section#projects article figure img {
-  width: 375px;
-  height: 250px;
-  object-fit: cover;
-  margin-top: 10px;
-}
-
-main section#projects article figure .margin-left {
-  margin-left: 10px;
-}
-
-main section#projects article figure .margin-right {
-  margin-right: 10px;
-}
-
-
-main section#projects article figure figcaption {
-  font-size: 0.75em;
-}
-
-main section#projects article section {
-  display: flex-cell;
 }
 
 
