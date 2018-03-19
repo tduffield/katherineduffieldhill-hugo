@@ -2,9 +2,9 @@
 {{ $caption := .Get "caption" }}
 {{ $command := (printf "%s" (.Get "options" | default "x800")) }}
 {{ $thumbnail := $image.Resize (printf "%s q100" $command) }}
-{{ $href := .Get "link" | default $image.Permalink }}
+{{ $href := .Get "link" | default $image.RelPermalink }}
 {{- with .Parent -}}
-  <a href='{{ $image.Permalink }}' data-ngthumb="{{$thumbnail.Permalink}}" data-ngdesc="{{ $caption }}">{{ $caption }}</a>
+  <a href='{{ $image.RelPermalink }}' data-ngthumb="{{$thumbnail.RelPermalink}}" data-ngdesc="{{ $caption }}">{{ $caption }}</a>
 {{- else -}}
-  {{ with .Get "class" }}<div class="{{ . }}">{{ end }}<a href="{{ $href }}"><img src='{{ $thumbnail.Permalink }}' /></a>{{ with .Get "class"}}</div>{{ end }}
+  {{ with .Get "class" }}<div class="{{ . }}">{{ end }}<a href="{{ $href }}"><img src='{{ $thumbnail.RelPermalink }}' /></a>{{ with .Get "class"}}</div>{{ end }}
 {{- end }}
