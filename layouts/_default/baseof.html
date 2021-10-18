@@ -21,13 +21,13 @@
           <li>
             <a {{ if .IsHome }}class="active" {{ end }}href="/">Home</a>
           </li>
-          {{ $currentPage := . }} {{ range sort .Site.Menus.menu "Weight" "asc" }}
+          {{ $currentPage := . }} {{ range sort .Site.Menus.main "Weight" "asc" }}
           <li>
             <a {{if or ($currentPage.IsMenuCurrent "menu" .) ($currentPage.HasMenuCurrent "menu" .)}}class="active" {{ end }}href="{{ .URL | relURL }}">{{ .Name }}</a>
           </li>
           {{ end }}
           <li>
-            <a href="/files/KatherineHill_Resume.pdf" target="_blank">Resumé</a>
+            <a href="/files/KDH-WorkSummary.pdf" target="_blank">Work Summary</a>
           </li>
         </ul>
       </nav>
@@ -38,7 +38,7 @@
     </section>
     <footer>
       <section id="copyright">
-        Copyright &copy; 2017 Katherine Duffield Hill. All Rights Reserved.
+        Copyright &copy; {{ dateFormat "2006" now }} Katherine Duffield Hill. All Rights Reserved.
       </section>
       <section id="social">
         <ul>

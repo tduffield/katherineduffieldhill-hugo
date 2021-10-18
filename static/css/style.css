@@ -139,6 +139,10 @@ main div.float-right {
   margin-left: 15px;
 }
 
+section.footnotes {
+  font-size: 0.7em;
+}
+
 /* Photography */
 
 main #photo-galleries,
